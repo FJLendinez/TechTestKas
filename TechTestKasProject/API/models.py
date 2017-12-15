@@ -4,13 +4,18 @@ from django.contrib.auth.models import User
 
 
 class TimeStampedModel(models.Model):
-    """Una clase abstracta para gestionar de manera 
-    automatica la creacion y modificacion de campos."""
+    """
+    Una clase abstracta para gestionar de manera 
+    automatica la creacion y modificacion de campos.
+    """
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
 
 
 class Article(TimeStampedModel):
+    """
+    Modelo de artículos
+    """
     title = models.TextField(max_length=150)
     slug = models.SlugField(max_length=150)
     content = models.TextField()

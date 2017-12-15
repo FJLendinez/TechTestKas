@@ -9,7 +9,7 @@ from .serializers import UserSerializer, ArticleSerializer
 @permission_classes((IsAuthenticated, ))
 class UserViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint para serializar usuarios.
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
@@ -18,7 +18,8 @@ class UserViewSet(viewsets.ModelViewSet):
 @permission_classes((IsAuthenticatedOrReadOnly, ))
 class ArticleViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows groups to be viewed or edited.
+    API endpoint para serializar artículos.
+    Falta sobrescribir el get_queryset
     """
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
