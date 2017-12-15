@@ -1,5 +1,8 @@
 # TechTestKas
 
+##Usuario para entrar
+Usuario: TTK
+Pass: patata123
 ##Endpoints:
 
 `/users`
