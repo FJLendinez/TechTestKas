@@ -5,6 +5,9 @@ from rest_framework.request import Request
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    “”” Serializer de usuarios con articulos relacionados y 
+    password como campo para escritura
+    “””
     articles = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
