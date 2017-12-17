@@ -7,9 +7,12 @@ class TimeStampedModel(models.Model):
     """
     Una clase abstracta para gestionar de manera 
     automatica la creacion y modificacion de campos.
+    Para este ejemplo es totalmente inutil y prescindible pero
+    para grandes proyectos es una buena práctica.
     """
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
+    
     class Meta:
         abstract = True
 
