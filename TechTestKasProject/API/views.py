@@ -19,7 +19,6 @@ class UserViewSet(viewsets.ModelViewSet):
 class ArticleViewSet(viewsets.ModelViewSet):
     """
     API endpoint para serializar artículos.
-    Falta sobrescribir el get_queryset
     """
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
