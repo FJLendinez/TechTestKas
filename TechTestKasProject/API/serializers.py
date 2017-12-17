@@ -22,6 +22,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ArticleSerializer(serializers.HyperlinkedModelSerializer):
+    “”” Serializer de articulos con el autor relacionado y
+    un campo oculto para obtener el usuario en los posts
+    “””
     author = serializers.StringRelatedField()
     owner = serializers.HiddenField(
         default=serializers.CurrentUserDefault()
