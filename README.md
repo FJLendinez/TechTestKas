@@ -1,19 +1,15 @@
 # TechTestKas
 
-##Usuario para entrar
+## Usuario para entrar
 
 Usuario: TTK
 Pass: patata123
 
-##Endpoints:
+## Endpoints:
 
 `/users`
 `/articles` [?ordering=[title/-title/created/-created]
 
-##Extended doc:
+## Extended doc:
 
-Ve a la carpeta docs y ejecuta:
-
-`mkdocs serve`
-
-Así tendrás montada la documentación
+https://fjlendinez.github.io/TechTestKas/
