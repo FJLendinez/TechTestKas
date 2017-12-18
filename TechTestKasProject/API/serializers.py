@@ -35,6 +35,5 @@ class ArticleSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('title', 'content', 'author', 'owner', 'created', 'modified')
 
     def create(self, validated_data):
-        author = validated_data['owner']
-        validated_data.pop('owner')
+        author = validated_data.pop('owner')
         return Article.objects.create(author=author, **validated_data)
