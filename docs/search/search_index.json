@@ -1,0 +1,89 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Bienvenido a TechTestKas\n\n\nEsto es una sobrada, pero me encanta hacerlo.\n\n\nContenido de la documentaci\u00f3n\n\n\n\n\nUn \nquickstart\n.\n\n\nUna breve explicaci\u00f3n de las \nclases\n usadas.\n\n\nLos cambios realizados en el archivo de \nsettings\n.\n\n\n\n\nMensaje del autor\n\n\nHa sido una experiencia curiosa, nunca hab\u00eda enfrentado un \nproyecto con  django-rest-framework y no hab\u00eda pasado de hacer proyectos simples.\nPodr\u00eda haber realizado mucho antes esta prueba con flask, pero cre\u00ed justo\nusar el framework por el que se me busc\u00f3 inicialmente.\n\n\nCr\u00e9ditos\n\n\nRealizado por Francisco Javier Lend\u00ednez Tirado",
+            "title": "Index"
+        },
+        {
+            "location": "/#bienvenido-a-techtestkas",
+            "text": "Esto es una sobrada, pero me encanta hacerlo.",
+            "title": "Bienvenido a TechTestKas"
+        },
+        {
+            "location": "/#contenido-de-la-documentacion",
+            "text": "Un  quickstart .  Una breve explicaci\u00f3n de las  clases  usadas.  Los cambios realizados en el archivo de  settings .",
+            "title": "Contenido de la documentaci\u00f3n"
+        },
+        {
+            "location": "/#mensaje-del-autor",
+            "text": "Ha sido una experiencia curiosa, nunca hab\u00eda enfrentado un \nproyecto con  django-rest-framework y no hab\u00eda pasado de hacer proyectos simples.\nPodr\u00eda haber realizado mucho antes esta prueba con flask, pero cre\u00ed justo\nusar el framework por el que se me busc\u00f3 inicialmente.",
+            "title": "Mensaje del autor"
+        },
+        {
+            "location": "/#creditos",
+            "text": "Realizado por Francisco Javier Lend\u00ednez Tirado",
+            "title": "Cr\u00e9ditos"
+        },
+        {
+            "location": "/quickstart/",
+            "text": "Instalaci\u00f3n\n\n\nPara instalar y usar esta prueba, se recomienda usar:\n\n\n\n\nUn entorno virtual (virtualenv)\n\n\nUna versi\u00f3n actualizada de Python\n\n\nLa versi\u00f3n de Django 1.11\n\n\n\n\nCreaci\u00f3n del entorno virtual\n\n\nInstalamos (blablabla...)\n\n\n$ virtualenv djangoenv\n$ source djangoenv/bin/activate\n(djangoenv) $\n\n\n\nInstalamos las dependencias\n\n\nSe instalar\u00e1n tanto las dependencias para el proyecto como para el desarrollo de la documentaci\u00f3n\n\n\n(djangoenv) $ pip install -r requirements\n\n\n\nArrancamos el proyecto\n\n\nEl principal objetivo es mostrar qu\u00e9 se ha hecho as\u00ed que ni se me ocurre\nhablar de deploy... pero gunicorn + nginx son un combo ganador.\n\n\nHablando de unicornios...",
+            "title": "Quickstart"
+        },
+        {
+            "location": "/quickstart/#instalacion",
+            "text": "Para instalar y usar esta prueba, se recomienda usar:   Un entorno virtual (virtualenv)  Una versi\u00f3n actualizada de Python  La versi\u00f3n de Django 1.11",
+            "title": "Instalaci\u00f3n"
+        },
+        {
+            "location": "/quickstart/#creacion-del-entorno-virtual",
+            "text": "Instalamos (blablabla...)  $ virtualenv djangoenv\n$ source djangoenv/bin/activate\n(djangoenv) $",
+            "title": "Creaci\u00f3n del entorno virtual"
+        },
+        {
+            "location": "/quickstart/#instalamos-las-dependencias",
+            "text": "Se instalar\u00e1n tanto las dependencias para el proyecto como para el desarrollo de la documentaci\u00f3n  (djangoenv) $ pip install -r requirements",
+            "title": "Instalamos las dependencias"
+        },
+        {
+            "location": "/quickstart/#arrancamos-el-proyecto",
+            "text": "El principal objetivo es mostrar qu\u00e9 se ha hecho as\u00ed que ni se me ocurre\nhablar de deploy... pero gunicorn + nginx son un combo ganador.  Hablando de unicornios...",
+            "title": "Arrancamos el proyecto"
+        },
+        {
+            "location": "/classes/",
+            "text": "Vamos a lo t\u00e9cnico\n\n\n\u00a1Esto se va a poner feo, seguro!\n\n\nModelos\n\n\n\n\nTimeStampedModel(Model)\n: Este modelo s\u00f3lo est\u00e1 para ser heredado.\n\n\ncreated\n : Atributo que nos dir\u00e1 cuando fue creado\n\n\nmodified\n: Atributo que nos dir\u00e1 cuando fue modificado\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nArticle(TimeStampedModel)\n: Nuestro modelo de art\u00edculos\n\n\n\n\ntitle\n: T\u00edtulo\n\n\nslug\n: El slug\n\n\ncontent\n: El cuerpo del art\u00edculo\n\n\nauthor\n: El autor del art\u00edculo\n\n\npublish\n: Revisar\n\n\n\n\n\n\n\n\n\n\n\n\nUser\n: Modelo de \ndjango.contrib.auth.models\n\n\n\n\nSerializers\n\n\n\n\nUserSerializer(HyperlinkedModelSerializer)\n: Clase que usaremos para serializar usuarios\n\n\nurl\n, \nusername\n, \npassword\n, \nfirst_name\n, \nlast_name\n y \nemail\n se usan tal cual est\u00e1 en el modelo.  \n\n\narticles\n: Se ha puesto en modo \nread-only\n \n\n\npassword\n: Se ha puesto en modo \nwrite-only\n\n\n\n\n\n\n\n\n\n\n\n\nArticleSerializer(HyperlinkedModelSerializer)\n: Clase que usaremos para serializar art\u00edculos\n\n\ntitle\n, \ncontent\n, \ncreated\n y \nmodified\n son tal cual en el modelo.\n\n\nowner\n: Un objeto que representa al usuario actual, estar\u00e1 oculto y servir\u00e1 para realizar peticiones POST de Art\u00edculos\n\n\nauthor\n: Se representa con el nombre\n\n\n\n\n\n\n\n\nVistas\n\n\n... al mar",
+            "title": "Clases"
+        },
+        {
+            "location": "/classes/#vamos-a-lo-tecnico",
+            "text": "\u00a1Esto se va a poner feo, seguro!",
+            "title": "Vamos a lo t\u00e9cnico"
+        },
+        {
+            "location": "/classes/#modelos",
+            "text": "TimeStampedModel(Model) : Este modelo s\u00f3lo est\u00e1 para ser heredado.  created  : Atributo que nos dir\u00e1 cuando fue creado  modified : Atributo que nos dir\u00e1 cuando fue modificado        Article(TimeStampedModel) : Nuestro modelo de art\u00edculos   title : T\u00edtulo  slug : El slug  content : El cuerpo del art\u00edculo  author : El autor del art\u00edculo  publish : Revisar       User : Modelo de  django.contrib.auth.models",
+            "title": "Modelos"
+        },
+        {
+            "location": "/classes/#serializers",
+            "text": "UserSerializer(HyperlinkedModelSerializer) : Clase que usaremos para serializar usuarios  url ,  username ,  password ,  first_name ,  last_name  y  email  se usan tal cual est\u00e1 en el modelo.    articles : Se ha puesto en modo  read-only    password : Se ha puesto en modo  write-only       ArticleSerializer(HyperlinkedModelSerializer) : Clase que usaremos para serializar art\u00edculos  title ,  content ,  created  y  modified  son tal cual en el modelo.  owner : Un objeto que representa al usuario actual, estar\u00e1 oculto y servir\u00e1 para realizar peticiones POST de Art\u00edculos  author : Se representa con el nombre",
+            "title": "Serializers"
+        },
+        {
+            "location": "/classes/#vistas",
+            "text": "... al mar",
+            "title": "Vistas"
+        },
+        {
+            "location": "/settings/",
+            "text": "Cambios en la configuraci\u00f3n\n\n\nAqu\u00ed hay poco que explicar!!\n\n\nINSTALLED_APPS = [\n    ...\n    'rest_framework',\n    'API'\n]\n\n\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAdminUser',\n    ],\n    'PAGE_SIZE': 10\n}\n\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\n\n\n\n\n\n\nDocumentar cansa mucho",
+            "title": "Settings"
+        },
+        {
+            "location": "/settings/#cambios-en-la-configuracion",
+            "text": "Aqu\u00ed hay poco que explicar!!  INSTALLED_APPS = [\n    ...\n    'rest_framework',\n    'API'\n]\n\n\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAdminUser',\n    ],\n    'PAGE_SIZE': 10\n}\n\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]  Documentar cansa mucho",
+            "title": "Cambios en la configuraci\u00f3n"
+        }
+    ]
+}

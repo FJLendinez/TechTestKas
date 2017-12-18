@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Clases - TechTestKasProject</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Clases";
+    var mkdocs_page_input_path = "classes.md";
+    var mkdocs_page_url = "/classes/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> TechTestKasProject</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Index</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../quickstart/">Quickstart</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Clases</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#vamos-a-lo-tecnico">Vamos a lo técnico</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#modelos">Modelos</a></li>
+        
+            <li><a class="toctree-l3" href="#serializers">Serializers</a></li>
+        
+            <li><a class="toctree-l3" href="#vistas">Vistas</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../settings/">Settings</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">TechTestKasProject</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Clases</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vamos-a-lo-tecnico">Vamos a lo técnico</h1>
+<p>¡Esto se va a poner feo, seguro!</p>
+<h2 id="modelos">Modelos</h2>
+<ul>
+<li><code>TimeStampedModel(Model)</code>: Este modelo sólo está para ser heredado.<ul>
+<li><code>created</code> : Atributo que nos dirá cuando fue creado</li>
+<li><code>modified</code>: Atributo que nos dirá cuando fue modificado</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p><code>Article(TimeStampedModel)</code>: Nuestro modelo de artículos</p>
+<ul>
+<li><code>title</code>: Título</li>
+<li><code>slug</code>: El slug</li>
+<li><code>content</code>: El cuerpo del artículo</li>
+<li><code>author</code>: El autor del artículo</li>
+<li><code>publish</code>: Revisar</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><code>User</code>: Modelo de <em>django.contrib.auth.models</em></li>
+</ul>
+<h2 id="serializers">Serializers</h2>
+<ul>
+<li><code>UserSerializer(HyperlinkedModelSerializer)</code>: Clase que usaremos para serializar usuarios<ul>
+<li><code>url</code>, <code>username</code>, <code>password</code>, <code>first_name</code>, <code>last_name</code> y <code>email</code> se usan tal cual está en el modelo.  </li>
+<li><code>articles</code>: Se ha puesto en modo <em>read-only</em> </li>
+<li><code>password</code>: Se ha puesto en modo <em>write-only</em></li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><code>ArticleSerializer(HyperlinkedModelSerializer)</code>: Clase que usaremos para serializar artículos<ul>
+<li><code>title</code>, <code>content</code>, <code>created</code> y <code>modified</code> son tal cual en el modelo.</li>
+<li><code>owner</code>: Un objeto que representa al usuario actual, estará oculto y servirá para realizar peticiones POST de Artículos</li>
+<li><code>author</code>: Se representa con el nombre</li>
+</ul>
+</li>
+</ul>
+<h2 id="vistas">Vistas</h2>
+<p>... al mar</p>
+<p><img alt="vistas-al-mar" src="../img/vistas-al-mar.jpg" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../settings/" class="btn btn-neutral float-right" title="Settings">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../quickstart/" class="btn btn-neutral" title="Quickstart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../quickstart/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../settings/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

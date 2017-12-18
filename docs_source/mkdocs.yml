@@ -1,0 +1,7 @@
+site_name: TechTestKasProject
+pages:
+    - Index: index.md
+    - Quickstart: quickstart.md
+    - Clases: classes.md
+    - Settings: settings.md
+theme: readthedocs
